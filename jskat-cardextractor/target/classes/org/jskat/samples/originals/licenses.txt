@@ -1,0 +1,38 @@
+* dondorf.svg
+* ornamental.svg
+* tango.svg
+  * from Aisleriot
+  * GNU General Public License Version 3 or later
+
+* svg-cards.svg
+  * from David Bellot
+  * GNU Lesser General Public License 2.1
+
+* tigullio-modern.svg
+* tigullio-bridge.svg
+* william-tell.svgz
+  * from Extra Card Decks for KDE Games
+  
+* huncards-full.svg
+* xskat.svg
+  * from Luciano Montanaro
+  * http://www.cirulla.net/listing/kde_stuff/card-decks/
+
+* GG.svg
+* E2.svg
+* E4.svg
+  * from International Skat Server (ISS)
+  * Public domain
+  
+* oxygen-white.svg
+* margoth.svg
+  * from Open Clipart (openclipart.org)
+  * Public domain
+
+* ancient-egyptians.svgz
+* jolly-royal.svgz
+* oxygen-white.svgz
+* oxygen.svgz
+* penguins.svgz
+  * from KDE Games
+  * GNU General Public License
