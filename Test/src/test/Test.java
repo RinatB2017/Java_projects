@@ -1,5 +1,7 @@
 package test;
 
+import java.util.regex.Pattern;
+
 class C
 {
     C()
@@ -41,6 +43,7 @@ public class Test extends A
     }    
 
     public static void main(String[] args) {
+        /*
         System.out.println("Test");
         A a = new A();
         a.aaa();
@@ -53,5 +56,23 @@ public class Test extends A
         int y = 5;
         boolean temp = x != y;
         System.out.println(temp);
+        */
+        String str = "|-2|666|f4|e";
+        //String[] ls = str.split(Pattern.quote("|"));
+        String[] ls = str.split("\\|");
+        int cnt = ls.length;
+        if(cnt == 5) 
+        {
+            String str_temperature = ls[0];
+            if(str_temperature.isEmpty())   str_temperature = "0";
+            Float temperature = Float.parseFloat(str_temperature);
+            
+            System.out.println(Float.toString(temperature));
+            System.out.println(ls[0]);
+            System.out.println(ls[1]);
+            System.out.println(ls[2]);
+            System.out.println(ls[3]);
+            System.out.println(ls[4]);
+        }
     }
 }
