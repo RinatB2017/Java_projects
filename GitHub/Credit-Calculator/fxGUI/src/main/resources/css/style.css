@@ -1,0 +1,126 @@
+@CHARSET = "ISO-8859-1";
+
+.root{
+     -fx-background-color:
+         /*linear-gradient(#59bb00 25%, #f5ffec 30%);*/
+         linear-gradient(from 100% 0% to 100% 100%, #59bb00 3%, #ecfddc 25%);
+     -fx-background-radius: 30, 30;
+
+}
+.plane{
+    -fx-background-color: ff0000;
+}
+
+.button {
+    -fx-background-color:
+        linear-gradient(#f0ff35, #a9ff00),
+        radial-gradient(center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50%);
+    -fx-background-radius: 11, 10;
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );
+    -fx-text-fill: #000000;
+}
+
+.button:hover{
+    -fx-background-color:
+        linear-gradient(#f0ff35, #a9ff00),
+        radial-gradient(center 50% -40%, radius 200%, #f0fd4a 45%, #b2ff1b 50%);
+    -fx-background-radius: 11, 10;
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );
+}
+
+ .button:pressed{
+    -fx-background-color:
+        linear-gradient(#f0ff35, #a9ff00),
+        radial-gradient(center 50% -40%, radius 200%, #f0fd4a 45%, #b2ff1b 50%);
+    -fx-background-radius: 11, 10;
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.8) , 10, 0.0 , 0 , 1 );
+ }
+ .text-field {
+     -fx-font-size: 19pt;
+     -fx-font-weight: bold;
+     -fx-text-fill: #054c00;
+     -fx-font-family: "Consolas";
+     -fx-background-radius: 10, 10;
+ }
+
+.combo-box {
+    -fx-background-color:
+        linear-gradient(#f2f2f2, #d6d6d6),
+        linear-gradient(#fcfcfc 0%, #d9d9d9 20%, #d6d6d6 100%),
+        linear-gradient(#dddddd 0%, #f6f6f6 50%);
+    -fx-background-radius: 8,7,6;
+    -fx-background-insets: 0,1,2;
+    -fx-text-fill: black;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+.combo-box .arrow-button{
+    -fx-background-color: #c3c4c4,
+        linear-gradient(#d6d6d6 50%, white 100%),
+        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);
+    -fx-background-radius: 3;
+    -fx-background-insets: 0,1,1;
+    -fx-text-fill: black;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
+}
+
+.combo-box .arrow-button:hover{
+    -fx-background-color: #c3c4c4,
+        linear-gradient(#f0fd4a 50%, white 100%),
+        radial-gradient(center 50% -40%, radius 200%, #b2ff1b 45%, rgba(230,230,230,0) 50%);
+    -fx-background-radius: 3;
+    -fx-background-insets: 0,1,1;
+    -fx-text-fill: black;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
+}
+
+.combo-box:hover{
+    -fx-background-color:
+        linear-gradient(#fbfbfb, #e4e4e4),
+        linear-gradient(#ffffff 0%, #e9e9e9 20%, #e0dfdf 100%),
+        linear-gradient(#eaeaea 0%, #fdfdfd 50%);
+    -fx-background-radius: 8,7,6;
+    -fx-background-insets: 0,1,2;
+    -fx-text-fill: black;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+.combo-box .text{
+     -fx-fill: black;
+     -fx-font-size: 16pt;
+}
+
+.column-header-background {
+    -fx-background-color: #c3c4c4,
+        linear-gradient(#d6d6d6 50%, white 100%),
+        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);
+    -fx-background-radius: 3;
+    -fx-background-insets: 0,1,1;
+    -fx-text-fill: black;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
+    -fx-font-size: 14pt;
+}
+
+.table-row-cell:empty { -fx-background-color: #ffffff; }
+
+
+.table-view .table-cell {
+    -fx-text-fill: #043b00;
+    -fx-font-size: 17pt;
+    -fx-alignment: CENTER;
+    -fx-font-family: "Consolas";
+}
+
+
+.table-row-cell:selected {
+    -fx-background-color: #c3c4c4,
+        linear-gradient(#8eff7b 50%, white 100%),
+        radial-gradient(center 50% -40%, radius 200%, #f2ffe3 45%, rgba(230,230,230,0) 50%);
+    -fx-background-radius: 3;
+    -fx-background-insets: 0,1,1;
+    -fx-text-fill: black;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
+}

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="frame" minHeight="-Infinity" minWidth="-Infinity" prefHeight="615.0" prefWidth="995.0673828125" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.Controller">
+  <children>
+    <VBox id="VBox" alignment="TOP_LEFT" minHeight="-1.0" minWidth="979.0673828125" prefHeight="552.0" prefWidth="981.0673828125" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="54.0">
+      <children>
+        <GridPane fx:id="grid_pan" alignment="TOP_LEFT" cache="false" gridLinesVisible="false" hgap="3.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="982.0" vgap="3.0">
+          <children>
+            <Label alignment="CENTER_LEFT" disable="false" focusTraversable="false" opacity="0.57" prefWidth="-1.0" text="Сумма кредита" textFill="BLACK" textOverrun="ELLIPSIS" underline="false" visible="true" wrapText="false" GridPane.columnIndex="0" GridPane.rowIndex="0">
+              <font>
+                <Font name="System Bold Italic" size="16.0" fx:id="x1" />
+              </font>
+            </Label>
+            <Label alignment="CENTER_LEFT" disable="false" focusTraversable="false" font="$x1" opacity="0.57" prefWidth="-1.0" text="Срок кредита" textFill="BLACK" textOverrun="ELLIPSIS" underline="false" visible="true" wrapText="false" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Label alignment="CENTER_LEFT" disable="false" focusTraversable="false" font="$x1" opacity="0.57" prefWidth="-1.0" text="Процентная ставка" textFill="BLACK" textOverrun="ELLIPSIS" underline="false" visible="true" wrapText="false" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <Label fx:id="iab_one_pr" disable="false" focusTraversable="false" font="$x1" opacity="0.57" text="Разовая комиссия (в процентах)" textFill="BLACK" textOverrun="ELLIPSIS" visible="true" wrapText="false" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <Label fx:id="lab_one_mny" disable="false" focusTraversable="false" font="$x1" opacity="0.57" text="Разовая комиссия (в деньгах)" textFill="BLACK" textOverrun="ELLIPSIS" visible="true" wrapText="false" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <Label fx:id="lab_month_pr" disable="false" focusTraversable="false" font="$x1" opacity="0.57" text="Ежемесячная комиссия (в процентах)" textFill="BLACK" textOverrun="ELLIPSIS" visible="true" wrapText="false" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+            <Label fx:id="lab_month_mny" disable="false" focusTraversable="false" font="$x1" opacity="0.57" text="Ежемесячная комиссия (в деньгах)" textFill="BLACK" textOverrun="ELLIPSIS" visible="true" wrapText="false" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+            <TextField fx:id="amount" editable="true" prefWidth="-1.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER">
+              <GridPane.margin>
+                <Insets fx:id="x4" />
+              </GridPane.margin>
+            </TextField>
+            <TextField fx:id="durationInMonths" prefWidth="-1.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="interestRate" prefWidth="-1.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField id="onceCommissionAmount" fx:id="onceCommissionPercent" prefWidth="-1.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField id="onceCommissionPercent" fx:id="onceCommissionAmount" prefWidth="-1.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField id="monthlyCommissionAmount" fx:id="monthlyCommissionPercent" prefWidth="-1.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField id="monthlyCommissionPercent" fx:id="monthlyCommissionAmount" prefWidth="-1.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Button id="res" fx:id="btn_res" mnemonicParsing="false" onAction="#onClickMethod" text="Рассчитать" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="8">
+              <font>
+                <Font size="16.0" fx:id="x3" />
+              </font>
+              <GridPane.margin>
+                <Insets top="10.0" fx:id="x7" />
+              </GridPane.margin>
+            </Button>
+            <ComboBox fx:id="combo_type" editable="false" prefHeight="28.0" prefWidth="298.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Label fx:id="schema" disable="false" focusTraversable="false" font="$x1" opacity="0.57" prefHeight="21.999908447265625" text="Схема погашения" textFill="BLACK" textOverrun="ELLIPSIS" visible="true" wrapText="false" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+            <Pane minWidth="-1.0" prefHeight="294.0" prefWidth="432.0" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowIndex="0" GridPane.rowSpan="2147483647">
+              <children>
+                <Rectangle arcHeight="76.0" arcWidth="76.0" disable="false" fill="linear-gradient(from 100.0% 0.0% to 100.0% 100.0%, 0x59bb00ff 0.0%, 0xecfddcff 60.0%, 0xecfddcff 100.0%)" focusTraversable="false" height="233.0" layoutX="7.0" layoutY="3.0" opacity="1.0" smooth="true" stroke="#996e00" strokeLineCap="SQUARE" strokeLineJoin="MITER" strokeMiterLimit="10.0" strokeType="INSIDE" strokeWidth="0.0" visible="true" width="418.0">
+                  <effect>
+                    <InnerShadow choke="0.1746031746031746" color="#1c1c1c" height="63.33333333333333" radius="31.166666666666664" width="63.33333333333333" />
+                  </effect>
+                </Rectangle>
+                <Text fx:id="text_res" fill="#006610" layoutX="21.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Кредитный калькулятор преднозначен для">
+                  <font>
+                    <Font name="Arial Bold Italic" size="18.0" />
+                  </font>
+                </Text>
+              </children>
+            </Pane>
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="436.0" minWidth="10.0" prefWidth="316.0" />
+            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="436.0" minWidth="10.0" prefWidth="223.0" />
+            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="720.0" minWidth="10.0" prefWidth="427.0" />
+          </columnConstraints>
+          <padding>
+            <Insets left="10.0" />
+          </padding>
+          <rowConstraints>
+            <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+        <TableView fx:id="table" prefHeight="243.0" prefWidth="982.0">
+          <columns>
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="29.0" text="№" visible="true" fx:id="num" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="112.0" text="Дата платежа" fx:id="paymentDateCol" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="126.0" text="Сумма платежа" fx:id="amountClo" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="125.0" text="Основной долг" fx:id="principalCol" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="197.0" text="Начисленные проценты" fx:id="accruedInterestCol" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="194.0" text="Ежемесячные комиссии" fx:id="monthlyCommissionCol" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="194.0" text="Остаток задолженности" fx:id="balancePayableCol" />
+          </columns>
+          <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
+          </VBox.margin>
+        </TableView>
+      </children>
+    </VBox>
+    <Text disable="false" fill="#ff7a00" focusTraversable="false" fontSmoothingType="GRAY" scaleX="1.0" scaleY="0.9999978518985229" smooth="true" strikethrough="false" strokeType="OUTSIDE" strokeWidth="0.0" text="Кредитный калькулятор" underline="false" visible="true" AnchorPane.leftAnchor="64.0" AnchorPane.topAnchor="0.0">
+      <effect>
+        <Glow level="0.4213836477987422">
+          <input>
+            <ColorAdjust brightness="0.7862595419847327" contrast="1.0" hue="0.8473282442748094" saturation="0.26717557251908386" />
+          </input>
+        </Glow>
+      </effect>
+      <font>
+        <Font name="System Bold" size="32.0" />
+      </font>
+    </Text>
+    <ImageView fx:id="im_exit" fitHeight="36.0" fitWidth="50.0" onMouseClicked="#onExit" onMouseExited="#onHotHover" onMouseMoved="#onHover" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+    <ImageView fx:id="im_help" fitHeight="36.0" fitWidth="40.0" layoutX="905.0" layoutY="0.0" onMouseClicked="#onClickHelp" onMouseExited="#onHotHoverHelp" onMouseMoved="#onHoverHelp" pickOnBounds="true" preserveRatio="true" />
+    <ImageView fitHeight="42.56239318847656" fitWidth="42.56239318847656" layoutX="7.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../img/logo.png" />
+      </image>
+    </ImageView>
+  </children>
+  <stylesheets>
+    <URL value="@../css/style.css" />
+  </stylesheets>
+</AnchorPane>
