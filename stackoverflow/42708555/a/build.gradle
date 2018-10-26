@@ -1,9 +1,0 @@
-apply plugin: 'java'
-
-repositories {
-  mavenLocal()
-}
-
-dependencies {
-  compile 'org.b:b:1.+'
-}

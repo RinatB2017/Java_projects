@@ -1,3 +1,0 @@
-gradle.taskGraph.afterTask { a, b ->
-   println "task completed"
-}
