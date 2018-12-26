@@ -29,6 +29,7 @@ public class Test
 {
     static String hex_str;
     static byte[] data;
+    static byte[][] data_arr;
     
     static void print(String text) {
         System.out.println(text);
@@ -70,6 +71,27 @@ public class Test
        
         return true;
     }
+    
+    /*
+        union UINT16 {
+        uint16_t value;
+        struct {
+            uint8_t c:4;
+            uint8_t d:4;
+            uint8_t a:4;
+            uint8_t b:4;
+        } bytes;
+    };
+    */
+    private static int get_led_value(int address)
+    {
+        int c = address >> 12 & 0xF;
+        int d = address >> 8 & 0xF;
+        int a = address >> 4 & 0xF;
+        int b = address & 0xF;
+        
+        return data_arr[a][b] << 8 | data_arr[c][d];
+    }
   
     public static void main(String[] args) throws UnsupportedEncodingException {
         print("Test");
@@ -85,6 +107,62 @@ public class Test
             }
         }
         print("");
+        
+        int index = 0;
+        data_arr = new byte[6][6];
+        for(int y=0; y<6; y++) {
+            for(int x=0; x<6; x++) {
+                data_arr[x][y] = data[index];
+                System.out.print(String.format("%x ", data_arr[x][y]));
+                index++;
+            }
+        }
+        print("");
+        
+        int led_15 = get_led_value(0x2112);
+        int led_16 = get_led_value(0x4151);
+        int led_17 = get_led_value(0x3102);
+
+        int led_12 = get_led_value(0x2255);
+        int led_13 = get_led_value(0x3245);
+        int led_14 = get_led_value(0x2535);
+
+        int led_09 = get_led_value(0x4223);
+        int led_10 = get_led_value(0x5213);
+        int led_11 = get_led_value(0x0333);
+
+        int led_06 = get_led_value(0x4314);
+        int led_07 = get_led_value(0x5334);
+        int led_08 = get_led_value(0x0424);
+
+        int led_03 = get_led_value(0x5415);
+        int led_04 = get_led_value(0x0510);
+        int led_05 = get_led_value(0x4400);
+
+        int led_00 = get_led_value(0x2001);
+        int led_01 = get_led_value(0x4011);
+        int led_02 = get_led_value(0x3050);
+        
+        print("led_00 " + led_00);
+        print("led_01 " + led_01);
+        print("led_02 " + led_02);
+        print("led_03 " + led_03);
+        print("led_04 " + led_04);
+        print("led_05 " + led_05);
+        print("led_06 " + led_06);
+        print("led_07 " + led_07);
+        print("led_08 " + led_08);
+        print("led_09 " + led_09);
+        print("led_10 " + led_10);
+        print("led_11 " + led_11);
+        print("led_12 " + led_12);
+        print("led_13 " + led_13);
+        print("led_14 " + led_14);
+        print("led_15 " + (byte)led_15);
+        
+        int x = 0xFF;
+        print("z " + x);
+        
         print("The end!");
     }
 }
