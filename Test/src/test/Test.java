@@ -143,25 +143,24 @@ public class Test
         int led_01 = get_led_value(0x4011);
         int led_02 = get_led_value(0x3050);
         
-        print("led_00 " + led_00);
-        print("led_01 " + led_01);
-        print("led_02 " + led_02);
-        print("led_03 " + led_03);
-        print("led_04 " + led_04);
-        print("led_05 " + led_05);
-        print("led_06 " + led_06);
-        print("led_07 " + led_07);
-        print("led_08 " + led_08);
-        print("led_09 " + led_09);
-        print("led_10 " + led_10);
-        print("led_11 " + led_11);
-        print("led_12 " + led_12);
-        print("led_13 " + led_13);
-        print("led_14 " + led_14);
-        print("led_15 " + (byte)led_15);
-        
-        int x = 0xFF;
-        print("z " + x);
+        print("led_00 " + (led_00 & 0xFF));
+        print("led_01 " + (led_01 & 0xFF));
+        print("led_02 " + (led_02 & 0xFF));
+        print("led_03 " + (led_03 & 0xFF));
+        print("led_04 " + (led_04 & 0xFF));
+        print("led_05 " + (led_05 & 0xFF));
+        print("led_06 " + (led_06 & 0xFF));
+        print("led_07 " + (led_07 & 0xFF));
+        print("led_08 " + (led_08 & 0xFF));
+        print("led_09 " + (led_09 & 0xFF));
+        print("led_10 " + (led_10 & 0xFF));
+        print("led_11 " + (led_11 & 0xFF));
+        print("led_12 " + (led_12 & 0xFF));
+        print("led_13 " + (led_13 & 0xFF));
+        print("led_14 " + (led_14 & 0xFF));
+        print("led_15 " + (led_15 & 0xFF));
+        print("led_16 " + (led_16 & 0xFF));
+        print("led_17 " + (led_17 & 0xFF));
         
         print("The end!");
     }
