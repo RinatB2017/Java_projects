@@ -65,6 +65,8 @@ public class Test
             String str = hex_str.substring(n, n+2);
             int value = Integer.parseInt(str, 16);
             
+            print(Integer.toHexString(value) + " ");
+            
             output.write((byte)value);
         }
         data = output.toByteArray();
@@ -85,10 +87,10 @@ public class Test
     */
     private static int get_led_value(int address)
     {
-        int c = address >> 12 & 0xF;
-        int d = address >> 8 & 0xF;
-        int a = address >> 4 & 0xF;
-        int b = address & 0xF;
+        int b = (address >> 12) & 0xF;
+        int a = (address >> 8) & 0xF;
+        int d = (address >> 4) & 0xF;
+        int c = address & 0xF;
         
         return data_arr[a][b] << 8 | data_arr[c][d];
     }
@@ -112,7 +114,7 @@ public class Test
         data_arr = new byte[6][6];
         for(int y=0; y<6; y++) {
             for(int x=0; x<6; x++) {
-                data_arr[x][y] = data[index];
+                data_arr[y][x] = data[index];
                 System.out.print(String.format("%x ", data_arr[x][y]));
                 index++;
             }
@@ -143,24 +145,39 @@ public class Test
         int led_01 = get_led_value(0x4011);
         int led_02 = get_led_value(0x3050);
         
-        print("led_00 " + (led_00 & 0xFF));
-        print("led_01 " + (led_01 & 0xFF));
-        print("led_02 " + (led_02 & 0xFF));
-        print("led_03 " + (led_03 & 0xFF));
-        print("led_04 " + (led_04 & 0xFF));
-        print("led_05 " + (led_05 & 0xFF));
-        print("led_06 " + (led_06 & 0xFF));
-        print("led_07 " + (led_07 & 0xFF));
-        print("led_08 " + (led_08 & 0xFF));
-        print("led_09 " + (led_09 & 0xFF));
-        print("led_10 " + (led_10 & 0xFF));
-        print("led_11 " + (led_11 & 0xFF));
-        print("led_12 " + (led_12 & 0xFF));
-        print("led_13 " + (led_13 & 0xFF));
-        print("led_14 " + (led_14 & 0xFF));
-        print("led_15 " + (led_15 & 0xFF));
-        print("led_16 " + (led_16 & 0xFF));
-        print("led_17 " + (led_17 & 0xFF));
+        print("led_15 " + (led_15 & 0xFFFF));
+        print("led_16 " + (led_16 & 0xFFFF));
+        print("led_17 " + (led_17 & 0xFFFF));
+
+        print("led_12 " + (led_12 & 0xFFFF));
+        print("led_13 " + (led_13 & 0xFFFF));
+        print("led_14 " + (led_14 & 0xFFFF));
+
+        print("led_09 " + (led_09 & 0xFFFF));
+        print("led_10 " + (led_10 & 0xFFFF));
+        print("led_11 " + (led_11 & 0xFFFF));
+
+        print("led_06 " + (led_06 & 0xFFFF));
+        print("led_07 " + (led_07 & 0xFFFF));
+        print("led_08 " + (led_08 & 0xFFFF));
+
+        print("led_03 " + (led_03 & 0xFFFF));
+        print("led_04 " + (led_04 & 0xFFFF));
+        print("led_05 " + (led_05 & 0xFFFF));
+        
+        print("led_00 " + (led_00 & 0xFFFF));
+        print("led_01 " + (led_01 & 0xFFFF));
+        print("led_02 " + (led_02 & 0xFFFF));
+        
+        int address = 0x1234;
+        int b = (address >> 12) & 0xF;
+        int a = (address >> 8) & 0xF;
+        int d = (address >> 4) & 0xF;
+        int c = address & 0xF;
+        print("a " + a);
+        print("b " + b);
+        print("c " + c);
+        print("d " + d);
         
         print("The end!");
     }
