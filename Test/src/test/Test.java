@@ -5,8 +5,7 @@ import java.io.IOException;
 
 public class Test
 {
-    public static void main(String[] args) throws IOException 
-    {
+    public static void prepare_packet() throws IOException {
         ByteArrayOutputStream data = new ByteArrayOutputStream();
         data.write(0x01);
         data.write(0x02);
@@ -22,7 +21,21 @@ public class Test
         mb.set_data(data);
         
         System.out.println(mb.get_string());
+    }
+
+    public static void prepare_zero_packet() throws IOException {
         
+        ModBus mb = new ModBus();
+        mb.set_address(0x01);
+        mb.set_command(0x01);
+        
+        System.out.println(mb.get_string());
+    }
+    
+    public static void main(String[] args) throws IOException 
+    {
+        prepare_packet();
+        prepare_zero_packet();
         //System.out.println(mb.get_data_2(0x01020304));
         //System.out.println(mb.get_data_4(0x11223344));
     }

@@ -143,15 +143,10 @@ public class ModBus {
         clear_packet();
         
         add_address(address);
-            System.err.println(packet.size());
         add_command(command);
-            System.err.println(packet.size());
         add_cnt_data(data.toByteArray().length);
-            System.err.println(packet.size());
         add_data();
-            System.err.println(packet.size());
         add_CRC32();
-            System.err.println(packet.size());
         
         str.append(':');
         for (int n = 0; n < packet.size(); n++) {
