@@ -13,10 +13,12 @@ public class Test
         data.write(0x03);
         data.write(0x04);
         data.write(0x05);
+        data.write(0x06);
+        data.write(0x07);
         
         ModBus mb = new ModBus();
-        mb.set_address(0xAA);
-        mb.set_command(0xBB);
+        mb.set_address(0x01);
+        mb.set_command(0x00);
         mb.set_data(data);
         
         System.out.println(mb.get_string());
