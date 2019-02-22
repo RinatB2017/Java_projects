@@ -134,6 +134,30 @@ public class Test
         }
         System.out.println(num);
     }
+
+    public static void test_5() {
+        for(int n=0; n<10; n++) {
+            try {
+                test_4(n);
+            } catch(Exception e) {
+                System.err.println(e.getMessage());
+            }
+        }
+    }
+
+    public static void test_6() {
+        Gen<Integer> iOb;
+
+        // Создаём объект Gen<Integer>
+        iOb = new Gen<Integer>(77);
+
+        // Показать тип данных, используемый iOb
+        iOb.showType();
+
+        // Получить значение iOb
+        int value = iOb.getob();
+        System.out.println("Значение " + value);        
+    }
     
     static class Gen<T> {
         T ob; // объявление объекта типа T
@@ -154,31 +178,26 @@ public class Test
         }
     }
     
+    public static int fromByteArray(byte[] bytes) {
+         return ByteBuffer.wrap(bytes).getInt();
+    }
+    
     public static void main(String[] args) throws IOException 
     {
         //test_0();
         //test_1();
         //test_2();
         //test_3();
+        //test_5();
+        //test_6();
         
-//        for(int n=0; n<10; n++) {
-//            try {
-//                test_4(n);
-//            } catch(Exception e) {
-//                System.err.println(e.getMessage());
-//            }
-//        }
+        byte[] array = new byte[4];
+        array[0] = 1;
+        array[1] = 0;
+        array[2] = 0;
+        array[3] = 0;
         
-        Gen<Integer> iOb;
+        System.err.println(fromByteArray(array));
 
-        // Создаём объект Gen<Integer>
-        iOb = new Gen<Integer>(77);
-
-        // Показать тип данных, используемый iOb
-        iOb.showType();
-
-        // Получить значение iOb
-        int value = iOb.getob();
-        System.out.println("Значение " + value);
     }
 }
