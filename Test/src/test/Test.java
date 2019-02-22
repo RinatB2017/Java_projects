@@ -110,6 +110,17 @@ public class Test
     {
         //test_0();
         //test_1();
-        test_2();
+        //test_2();
+        
+        int ascii_len = 6;
+        byte[] buffer = new byte[ascii_len];
+        buffer[0] = 'A';
+        buffer[1] = 'B';
+        buffer[2] = 'C';
+        buffer[3] = 'D';
+        buffer[4] = 'E';
+        buffer[5] = 'F';
+        
+        System.err.println(new String(buffer, "UTF-8").substring(1, ascii_len-1));
     }
 }
