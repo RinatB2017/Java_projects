@@ -27,11 +27,11 @@ public class Test
         System.out.println(mb.get_string());
     }
 
-    public static void prepare_zero_packet() throws IOException {
+    public static void prepare_zero_packet(int address, int cmd) throws IOException {
         
         ModBus mb = new ModBus();
-        mb.set_address(0x01);
-        mb.set_command(0x01);
+        mb.set_address(address);
+        mb.set_command(cmd);
         
         System.out.println(mb.get_string());
     }
@@ -62,17 +62,28 @@ public class Test
         //System.err.println("checksumValue " + Long.toHexString(checksumValue));
         //System.err.println("packet_crc32  " + Long.toHexString(packet_crc32));
         
-        if(checksumValue != packet_crc32)   
-            return false;
-        
-        return true;
+        return (checksumValue == packet_crc32);   
     }
     
-    public static void main(String[] args) throws IOException 
-    {
-        //prepare_packet();
-        prepare_zero_packet();
-        
+    public static byte[] hexStringToByteArray(String s) {
+        int len = s.length();
+        byte[] data = new byte[len / 2];
+        for (int i = 0; i < len; i += 2) {
+            data[i / 2] = (byte) ((Character.digit(s.charAt(i), 16) << 4)
+                    + Character.digit(s.charAt(i+1), 16));
+        }
+        return data;
+    }
+    
+    public static void test_0() throws IOException {
+        prepare_zero_packet(0, 0);
+        prepare_zero_packet(0, 1);
+        prepare_zero_packet(0, 2);
+        prepare_zero_packet(0, 3);
+        prepare_zero_packet(0, 4);
+    }
+    
+    public static void test_1() {
         ByteArrayOutputStream packet = new ByteArrayOutputStream();
         packet.write(0x01);
         packet.write(0x01);
@@ -84,5 +95,21 @@ public class Test
         
         boolean ok = check_packet(packet);
         System.err.println(ok ? "OK" : "FAIL");
+    }
+
+    public static void test_2() {
+        byte[] array = hexStringToByteArray("000000FF41D912");
+        for(int n=0; n<array.length; n++)
+        {
+            System.err.println(String.format("%02X", array[n]));
+        }
+        System.err.println("");
+    }
+    
+    public static void main(String[] args) throws IOException 
+    {
+        //test_0();
+        //test_1();
+        test_2();
     }
 }
