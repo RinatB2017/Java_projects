@@ -2,6 +2,7 @@ package test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 
 import java.util.zip.CRC32;
@@ -106,12 +107,7 @@ public class Test
         System.err.println("");
     }
     
-    public static void main(String[] args) throws IOException 
-    {
-        //test_0();
-        //test_1();
-        //test_2();
-        
+    public static void test_3() throws UnsupportedEncodingException {
         int ascii_len = 6;
         byte[] buffer = new byte[ascii_len];
         buffer[0] = 'A';
@@ -122,5 +118,67 @@ public class Test
         buffer[5] = 'F';
         
         System.err.println(new String(buffer, "UTF-8").substring(1, ascii_len-1));
+    }
+    
+    public static void test_4(int num) throws Exception {
+        switch(num) {
+            case 0:
+                throw new Exception("num_9");
+            case 1:
+                throw new Exception("num_1");
+            case 2:
+                throw new Exception("num_2");
+                
+            default:
+                break;
+        }
+        System.out.println(num);
+    }
+    
+    static class Gen<T> {
+        T ob; // объявление объекта типа T
+
+        // Передать конструктору ссылку на объект типа T
+        Gen(T o) {
+            ob = o;
+        }
+
+        // Вернуть ob
+        T getob() {
+            return ob;
+        }
+
+        // Показать тип T
+        void showType() {
+            System.out.println("Тип T: " + ob.getClass().getName());
+        }
+    }
+    
+    public static void main(String[] args) throws IOException 
+    {
+        //test_0();
+        //test_1();
+        //test_2();
+        //test_3();
+        
+//        for(int n=0; n<10; n++) {
+//            try {
+//                test_4(n);
+//            } catch(Exception e) {
+//                System.err.println(e.getMessage());
+//            }
+//        }
+        
+        Gen<Integer> iOb;
+
+        // Создаём объект Gen<Integer>
+        iOb = new Gen<Integer>(77);
+
+        // Показать тип данных, используемый iOb
+        iOb.showType();
+
+        // Получить значение iOb
+        int value = iOb.getob();
+        System.out.println("Значение " + value);
     }
 }
