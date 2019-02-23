@@ -191,6 +191,7 @@ public class Test
         //test_5();
         //test_6();
         
+        /*
         byte[] array = new byte[4];
         array[0] = 1;
         array[1] = 0;
@@ -198,6 +199,8 @@ public class Test
         array[3] = 0;
         
         System.err.println(fromByteArray(array));
-
+        */
+        
+        prepare_zero_packet(0, 0);
     }
 }
