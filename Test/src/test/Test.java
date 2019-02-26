@@ -201,6 +201,15 @@ public class Test
         System.err.println(fromByteArray(array));
         */
         
-        prepare_zero_packet(0, 0);
+        //prepare_zero_packet(0, 0);
+        
+        ByteArrayOutputStream packet = new ByteArrayOutputStream();
+        for(int n=0; n<10; n++) 
+        {
+            packet.write(n);
+        }
+        System.out.println(packet.size());
+        packet.reset();
+        System.out.println(packet.size());
     }
 }
