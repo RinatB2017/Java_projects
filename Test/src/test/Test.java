@@ -203,6 +203,7 @@ public class Test
         
         //prepare_zero_packet(0, 0);
         
+        /*
         ByteArrayOutputStream packet = new ByteArrayOutputStream();
         for(int n=0; n<10; n++) 
         {
@@ -211,5 +212,15 @@ public class Test
         System.out.println(packet.size());
         packet.reset();
         System.out.println(packet.size());
+        */
+        
+        byte[] array = new byte[5];
+        array[0] = 'H';
+        array[1] = 'e';
+        array[2] = 'l';
+        array[3] = 'l';
+        array[4] = 'o';
+        
+        System.out.println(new String(array, "UTF-8"));
     }
 }
