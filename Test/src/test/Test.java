@@ -182,6 +182,16 @@ public class Test
          return ByteBuffer.wrap(bytes).getInt();
     }
     
+    public static void text_concat(String text) {
+        text = text.concat("6");
+    }
+    
+    static int x = 0;
+
+    public static void int_inc(int value) {
+        value = value + 1;
+    }
+
     public static void main(String[] args) throws IOException 
     {
         //test_0();
@@ -214,6 +224,7 @@ public class Test
         System.out.println(packet.size());
         */
         
+        /*
         byte[] array = new byte[5];
         array[0] = 'H';
         array[1] = 'e';
@@ -222,5 +233,16 @@ public class Test
         array[4] = 'o';
         
         System.out.println(new String(array, "UTF-8"));
+        */
+        String str = "value = ";
+        text_concat(str);
+        text_concat(str);
+        text_concat(str);
+        System.out.println(str + ";");
+        
+        int_inc(x);
+        int_inc(x);
+        int_inc(x);
+        System.out.println("x = " + String.valueOf(x));
     }
 }
