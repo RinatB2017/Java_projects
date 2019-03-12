@@ -60,8 +60,8 @@ public class Test
         array[7] = i_data.toByteArray()[len - 1];
         long packet_crc32 = convertToLong(array);
         
-        //System.err.println("checksumValue " + Long.toHexString(checksumValue));
-        //System.err.println("packet_crc32  " + Long.toHexString(packet_crc32));
+        System.err.println("checksumValue " + Long.toHexString(checksumValue));
+        System.err.println("packet_crc32  " + Long.toHexString(packet_crc32));
         
         return (checksumValue == packet_crc32);   
     }
@@ -159,6 +159,25 @@ public class Test
         System.out.println("Значение " + value);        
     }
     
+    public static void test_7() {
+        ByteArrayOutputStream packet = new ByteArrayOutputStream();
+        
+        packet.write(0x00);
+        packet.write(0x11);
+        packet.write(0x04);
+        packet.write(0x01);
+        packet.write(0x3F);
+        packet.write(0x3F);
+        packet.write(0x3F);
+        packet.write(0xA9);
+        packet.write(0x58);
+        packet.write(0x51);
+        packet.write(0x4C);
+        
+        boolean ok = check_packet(packet);
+        System.err.println(ok ? "OK" : "FAIL");
+    }
+    
     static class Gen<T> {
         T ob; // объявление объекта типа T
 
@@ -200,6 +219,7 @@ public class Test
         //test_3();
         //test_5();
         //test_6();
+        test_7();
         
         /*
         byte[] array = new byte[4];
@@ -234,6 +254,8 @@ public class Test
         
         System.out.println(new String(array, "UTF-8"));
         */
+        
+        /*
         String str = "value = ";
         text_concat(str);
         text_concat(str);
@@ -244,5 +266,6 @@ public class Test
         int_inc(x);
         int_inc(x);
         System.out.println("x = " + String.valueOf(x));
+*/
     }
 }
