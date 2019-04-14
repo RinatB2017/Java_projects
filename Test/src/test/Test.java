@@ -120,7 +120,7 @@ public class Test
         System.err.println(new String(buffer, "UTF-8").substring(1, ascii_len-1));
     }
     
-    public static void test_4(int num) throws Exception {
+    public static int calc(int num) throws Exception {
         switch(num) {
             case 0:
                 throw new Exception("num_9");
@@ -132,20 +132,21 @@ public class Test
             default:
                 break;
         }
-        System.out.println(num);
+        return num;
     }
 
-    public static void test_5() {
+    public static void test_4() {
         for(int n=0; n<10; n++) {
             try {
-                test_4(n);
+                int num = calc(n);
+                System.out.println(num);
             } catch(Exception e) {
                 System.err.println(e.getMessage());
             }
         }
     }
 
-    public static void test_6() {
+    public static void test_5() {
         Gen<Integer> iOb;
 
         // Создаём объект Gen<Integer>
@@ -159,7 +160,7 @@ public class Test
         System.out.println("Значение " + value);        
     }
     
-    public static void test_7() {
+    public static void test_6() {
         ByteArrayOutputStream packet = new ByteArrayOutputStream();
         
         packet.write(0x00);
@@ -217,9 +218,10 @@ public class Test
         //test_1();
         //test_2();
         //test_3();
+        test_4();
         //test_5();
         //test_6();
-        test_7();
+        //test_7();
         
         /*
         byte[] array = new byte[4];
