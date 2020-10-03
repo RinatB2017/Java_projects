@@ -7,8 +7,8 @@ import java.util.function.UnaryOperator;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        dots();
-//        digits();
+//        dots();
+        digits();
     }
 
     private static void dots() {
