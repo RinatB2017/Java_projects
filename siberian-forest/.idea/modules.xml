@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/siberian-forest-geo/src/main/main.iml" filepath="$PROJECT_DIR$/siberian-forest-geo/src/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/siberian-forest.iml" filepath="$PROJECT_DIR$/.idea/siberian-forest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/siberian-forest-biology/siberian-forest-biology.iml" filepath="$PROJECT_DIR$/siberian-forest-biology/siberian-forest-biology.iml" />
+      <module fileurl="file://$PROJECT_DIR$/siberian-forest-biology-impl/siberian-forest-biology-impl.iml" filepath="$PROJECT_DIR$/siberian-forest-biology-impl/siberian-forest-biology-impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/siberian-forest-commons/siberian-forest-commons.iml" filepath="$PROJECT_DIR$/siberian-forest-commons/siberian-forest-commons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/siberian-forest-swing-drawing/siberian-forest-swing-drawing.iml" filepath="$PROJECT_DIR$/siberian-forest-swing-drawing/siberian-forest-swing-drawing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/siberian-forest-visual-swing/siberian-forest-visual-swing.iml" filepath="$PROJECT_DIR$/siberian-forest-visual-swing/siberian-forest-visual-swing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/siberian-forest-geo/src/test/test.iml" filepath="$PROJECT_DIR$/siberian-forest-geo/src/test/test.iml" />
+    </modules>
+  </component>
+</project>
